@@ -1,0 +1,56 @@
+---
+import "@fontsource-variable/source-serif-4";
+import "@fontsource/unifrakturmaguntia";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title = "Frederick", description = "Das bin ich. Frederick." } =
+  Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <meta charset="utf-8" />
+    <meta name="locale" content="de_DE" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  body {
+    font-family: "Source Serif 4 Variable", "Times New Roman", serif;
+    background-color: #fffff6;
+    color: #201000;
+  }
+  main {
+    max-width: 800px;
+    text-align: justify;
+    margin: 0px auto;
+  }
+  :global(p)::first-letter {
+    display: block;
+    float: left;
+    font-size: 3.7em;
+    margin-right: 0.1em;
+    font-family: "UnifrakturMaguntia", "Times New Roman", serif;
+  }
+  :global(h1) {
+    font-variant-caps: small-caps;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+  }
+</style>
