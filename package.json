@@ -1,4 +1,5 @@
 {
+  "name": "@fr-bl/website",
   "license": "MIT",
   "type": "module",
   "scripts": {
