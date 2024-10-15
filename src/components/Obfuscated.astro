@@ -38,7 +38,6 @@ function generateNoise(length: number) {
 function createTag(content: string, isNoise = false) {
   return `<span${isNoise ? " hidden" : ""}>${content}<\/span>`;
 }
-console.log(value, obfuscated);
 ---
 
 <span set:html={obfuscated} />
