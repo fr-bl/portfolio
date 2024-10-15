@@ -1,0 +1,54 @@
+:root {
+  --color-background: #ffe;
+  --color-text: #332;
+  --color-highlight: #ff6;
+  --size-content-width: 800px;
+  --size-gap: 1em;
+  --size-padding: 0.5em;
+  --duration-short: 0.15s;
+}
+
+body {
+  margin: 0px;
+  font-family: "Source Serif 4 Variable", "Times New Roman", serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
+  background-image: linear-gradient(
+    var(--color-highlight),
+    var(--color-highlight)
+  );
+  background-size: 100% 0.2em;
+  background-position-y: 100%;
+  background-position-x: 0%;
+  background-repeat: no-repeat;
+  transition: background-size var(--duration-short);
+}
+
+::selection {
+  background: var(--color-highlight);
+}
+
+a:hover,
+a:focus,
+a:active {
+  background-size: 100% 0.5em;
+}
+
+p::first-letter {
+  display: block;
+  float: left;
+  font-size: 3.5em;
+  margin-right: 0.1em;
+  font-family: "UnifrakturMaguntia", "Times New Roman", serif;
+}
+
+h1 {
+  font-variant-caps: small-caps;
+  font-size: 3em;
+  font-weight: 600;
+}
