@@ -1,0 +1,44 @@
+---
+interface Props {
+  value: string;
+}
+
+const { value } = Astro.props;
+const obfuscated = obfuscate(value);
+
+function obfuscate(value: string) {
+  let i = 0;
+  let isNoise = true;
+  let parts: string[] = [];
+
+  while (i < value.length || isNoise) {
+    const length = Math.floor(Math.random() * 2) + 1;
+    if (isNoise) {
+      parts.push(
+        ...Array.from({ length }, () => createTag(generateNoise(1), true)),
+      );
+    } else {
+      parts.push(
+        ...Array.from({ length }, (_, j) =>
+          i + j < value.length ? createTag(value[i + j]) : "",
+        ),
+      );
+      i += length;
+    }
+    isNoise = !isNoise;
+  }
+
+  return parts.join("");
+}
+
+function generateNoise(length: number) {
+  return (Math.random() + 1).toString(36).slice(2, length + 2);
+}
+
+function createTag(content: string, isNoise = false) {
+  return `<span${isNoise ? " hidden" : ""}>${content}<\/span>`;
+}
+console.log(value, obfuscated);
+---
+
+<span set:html={obfuscated} />
