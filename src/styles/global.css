@@ -42,13 +42,25 @@ a:active {
 p::first-letter {
   display: block;
   float: left;
-  font-size: 3.5em;
+  font-size: 3em;
   margin-right: 0.1em;
   font-family: "UnifrakturMaguntia", "Times New Roman", serif;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-variant-caps: small-caps;
-  font-size: 3em;
   font-weight: 600;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
 }
