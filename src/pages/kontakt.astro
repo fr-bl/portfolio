@@ -6,10 +6,18 @@ import Obfuscated from "@components/Obfuscated.astro";
 <Layout title="Kontakt">
   <p>
     Ich bin immer unter den folgenden Kontakten verfügbar. Personen, die ich
-    bereits kenne, erhalten exklusiven zugriff auf meine privaten Kontaktdaten.
-    <dl>
-      <dt>E-Mail</dt><dd><Obfuscated value="hey@blaes.ing" /></dd>
-      <dt>GitHub</dt><dd><a href="https://github.com/fr-bl">@fr-bl</a></dd>
-    </dl>
+    bereits kenne, erhalten exklusiven Zugriff auf meine privaten Kontaktdaten.
+    <h2>E-Mail</h2>
+    <a href="#obfuscated-email" id="email-anchor"><Obfuscated value={"hey:blaes.ing".replace(":", "@")} /></a>
+    <h2>GitHub</h2>
+      <a href="https://github.com/fr-bl">@fr-bl</a>
   </p>
 </Layout>
+
+<script>
+  const emailAnchor = document.getElementById("email-anchor") as HTMLAnchorElement;
+  const setEmailHref = () => 
+    emailAnchor.href = `mailto:${emailAnchor.innerText}`;
+  emailAnchor.addEventListener("mouseenter", setEmailHref)
+  emailAnchor.addEventListener("click", setEmailHref)
+</script>
