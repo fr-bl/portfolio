@@ -17,13 +17,12 @@ body {
   text-align: justify;
   background-color: rgb(var(--color-background));
   color: rgb(var(--color-text));
-  text-shadow: 0 0 150px rgba(var(--color-text), 0.2);
-  margin: 0px auto;
+  text-shadow: 0 0 300px rgba(var(--color-text), 0.3);
 }
 
 main {
   max-width: var(--size-content-width);
-  margin: 0em auto;
+  margin: 0px auto;
   min-height: calc(100vh - 22rem);
   padding: var(--size-padding);
 }
