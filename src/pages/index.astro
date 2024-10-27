@@ -3,18 +3,28 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Ich">
-  <h1 slot="title" class="name"><span class="first">Frederick</span><br /><span class="last">Bläsing</span></h1>
+  <h1 slot="title" class="title"><span class="name"><span class="first">Frederick</span><br /><span class="last">Bläsing</span></span>
+  <div class="banner">👋</div>
+  </h1>
   <p>
-    Wer das liest, kennt mich wahrscheinlich bereits. Für die die es nicht tun:
-    Ich bin im Moment 17 Jahre alt, Schüler im Abiturjahrgang des
-    Eckener-Gymnasiums und programmiere in meiner Freizeit gerne. So sind im Informatik-Leistungskurs und zuhause bereits zahlreiche <a href="/projekte">Projekte</a> zustandegekommen. Ich bin unter den angegebenen <a href="/kontakt">Kontaktmöglichkeiten</a> zu erreichen.
+  Hallo! Ich bin 17 Jahre alt, Schüler im Abiturjahrgang des
+  Eckener-Gymnasiums und programmiere in meiner Freizeit gerne. Im Informatik-Leistungskurs und zu Hause sind so bereits zahlreiche <a href="/projekte">Projekte</a> entstanden. Noch Fragen? Nimm gerne <a href="/kontakt">Kontakt</a> mit mir auf!
   </p>
 </Layout>
 
 <style>
+  .title {
+    position: relative;
+  }
   .name>.first {
     font-size: 0.8em;
     font-weight: 200;
     color: rgb(var(--color-text));
+  }
+  .banner {
+    font-size: min(2em, calc(-1em + 40vw));
+    position: absolute;
+    right: 0px;
+    bottom: max(-0.5em, calc(-16rem + 1em));
   }
 </style>
