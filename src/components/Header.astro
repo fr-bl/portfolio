@@ -3,11 +3,15 @@
 ---
 
 <header>
-  <nav>
+  <div class="content">
+  <nav aria-label="subpages">
     <a href="/">~</a>
     <a href="/projekte">Projekte</a>
-    <a href="/kontakt">Kontakt</a>
   </nav>
+  <nav aria-label="contact">
+    <a href="/kontakt">Kontakt</a>
+    </nav>
+  </div>
 </header>
 
 <style>
@@ -16,12 +20,18 @@
     font-family: var(--font-family-layout);
     padding: var(--size-padding);
   }
-  nav {
+  .content {
     max-width: var(--size-content-width);
     margin: 0px auto;
 
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--size-gap);
+  }
+  nav {
+    display: flex;
     align-items: center;
     gap: var(--size-gap);
   }
