@@ -2,7 +2,7 @@
 
 ---
 
-<div id="cursor-aura" class="inactive"></div>
+<div id="cursor-aura" class="inactive" hidden></div>
 
 <script>
   const cursorAura = document.getElementById("cursor-aura") as HTMLDivElement;
@@ -15,6 +15,7 @@
       },
       { duration: 2000, fill: "forwards" },
     );
+    cursorAura.hidden = false;
     cursorAura.className = "";
   });
 </script>

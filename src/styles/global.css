@@ -17,7 +17,6 @@ body {
   text-align: justify;
   background-color: rgb(var(--color-background));
   color: rgb(var(--color-text));
-  text-shadow: 0 0 300px rgba(var(--color-text), 0.3);
 }
 
 main {
@@ -60,6 +59,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-family-layout);
+  text-shadow: 0 0 300px rgba(var(--color-text), 0.3);
 }
 
 h1 {
