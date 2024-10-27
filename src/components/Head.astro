@@ -1,15 +1,16 @@
 ---
 export interface Props {
-  title: string;
+  title?: string;
   description?: string;
 }
 
-const { title, description = "Hallo, ich bin Frederick!" } = Astro.props;
+const { title = "", description = "Hallo, ich bin Frederick!" } = Astro.props;
+const longTitle = `${title}${title && " - "}Frederick Bläsing`
 ---
 
 <head>
-  <title>{title}</title>
-  <meta name="title" content={title} />
+  <title>{longTitle}</title>
+  <meta name="title" content={longTitle} />
   <meta name="description" content={description} />
 
   <meta charset="utf-8" />
