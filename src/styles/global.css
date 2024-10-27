@@ -14,9 +14,10 @@ body {
   margin: 0px;
   font-family: var(--font-family-content);
   font-size: 1.3rem;
-  text-align: justify;
   background-color: rgb(var(--color-background));
   color: rgb(var(--color-text));
+  text-align: justify;
+  hyphens: auto;
 }
 
 main {
@@ -48,8 +49,7 @@ a:active {
 
 ::selection {
   background: rgb(var(--color-highlight));
-  color: white;
-  mix-blend-mode: difference;
+  color: rgb(var(--color-text));
 }
 
 h1,
