@@ -2,13 +2,19 @@
 import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout title="Das Bin Ich. Frederick">
+<Layout title="Frederick Bläsing">
+  <h1 slot="title" class="name"><span class="first">Frederick</span><br /><span class="last">Bläsing</span></h1>
   <p>
     Wer das liest, kennt mich wahrscheinlich bereits. Für die die es nicht tun:
     Ich bin im Moment 17 Jahre alt, Schüler im Abiturjahrgang des
-    Eckener-Gymnasiums und programmiere in meiner Freizeit gerne. Projekte, die
-    ich im Informatik-Leistungskurs, oder zuhause angefertigt habe, sind unter <a
-      href="/projekte">Projekte</a
-    > vermerkt.
+    Eckener-Gymnasiums und programmiere in meiner Freizeit gerne. So sind im Informatik-Leistungskurs und zuhause bereits zahlreiche <a href="/projekte">Projekte</a> zustandegekommen. Ich bin unter den angegebenen <a href="/kontakt">Kontaktmöglichkeiten</a> zu erreichen.
   </p>
 </Layout>
+
+<style>
+  .name>.first {
+    font-size: 0.8em;
+    font-weight: 200;
+    color: rgb(var(--color-text));
+  }
+</style>

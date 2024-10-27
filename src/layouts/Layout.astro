@@ -1,7 +1,7 @@
 ---
 import "@styles/global.css";
-import "@fontsource-variable/source-serif-4";
-import "@fontsource/unifrakturmaguntia";
+import "@fontsource-variable/hanken-grotesk";
+import "@fontsource-variable/source-sans-3";
 
 import Head, { type Props as HeadProps } from "@components/Head.astro";
 import Header from "@components/Header.astro";
@@ -17,18 +17,9 @@ const { title } = Astro.props;
   <body>
     <Header />
     <main>
-      <h1>{title}</h1>
+      <slot name="title"><h1>{title}</h1></slot>
       <slot />
     </main>
     <Footer />
   </body>
 </html>
-
-<style>
-  main {
-    max-width: var(--size-content-width);
-    min-height: 100vh;
-    margin: 0px auto;
-    text-align: justify;
-  }
-</style>
