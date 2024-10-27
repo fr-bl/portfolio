@@ -2,18 +2,21 @@
 
 ---
 
-<div id="cursor-aura" class="inactive"/>
+<div id="cursor-aura" class="inactive"></div>
 
 <script>
   const cursorAura = document.getElementById("cursor-aura") as HTMLDivElement;
 
   addEventListener("mousemove", (e) => {
-    cursorAura.animate({
-   left: `${e.clientX}px`,
-      top: `${e.clientY}px`
-    }, {duration: 2000, fill:"forwards"})
+    cursorAura.animate(
+      {
+        left: `${e.clientX}px`,
+        top: `${e.clientY}px`,
+      },
+      { duration: 2000, fill: "forwards" },
+    );
     cursorAura.className = "";
-  })
+  });
 </script>
 
 <style>
@@ -25,7 +28,11 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(var(--color-text), 0.05) 0%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      rgba(var(--color-text), 0.05) 0%,
+      transparent 70%
+    );
     opacity: 1;
     transition: opacity 2s;
   }

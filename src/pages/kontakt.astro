@@ -5,18 +5,23 @@ import Obfuscated from "@components/Obfuscated.astro";
 
 <Layout title="Kontakt">
   <p>
-    
     <h2>E-Mail</h2>
-      Schreib mir eine E-Mail an <a href="#obfuscated-email" id="email-anchor"><Obfuscated value={"hey:blaes.ing".replace(":", "@")} /></a> und du wirst in Kürze eine Antwort erhalten.
+    Schreib mir eine E-Mail an <a href="#obfuscated-email" id="email-anchor"
+      ><Obfuscated value={"hey:blaes.ing".replace(":", "@")} /></a
+    > und du wirst in Kürze eine Antwort erhalten.
     <h2>GitHub</h2>
-      Ich bin auf der Softwareentwicklungs-Platform GitHub aktiv als <a href="https://github.com/fr-bl">@fr-bl</a> und stehe dort zu Anfragen auf einzelne Projekte jederzeit bereit.
+    Ich bin auf der Softwareentwicklungs-Platform GitHub aktiv als <a
+      href="https://github.com/fr-bl">@fr-bl</a
+    > und stehe dort zu Anfragen auf einzelne Projekte jederzeit bereit.
   </p>
 </Layout>
 
 <script>
-  const emailAnchor = document.getElementById("email-anchor") as HTMLAnchorElement;
-  const setEmailHref = () => 
-    emailAnchor.href = `mailto:${emailAnchor.innerText}`;
-  emailAnchor.addEventListener("mouseenter", setEmailHref)
-  emailAnchor.addEventListener("click", setEmailHref)
+  const emailAnchor = document.getElementById(
+    "email-anchor",
+  ) as HTMLAnchorElement;
+  const setEmailHref = () =>
+    (emailAnchor.href = `mailto:${emailAnchor.innerText}`);
+  emailAnchor.addEventListener("mouseenter", setEmailHref);
+  emailAnchor.addEventListener("click", setEmailHref);
 </script>
