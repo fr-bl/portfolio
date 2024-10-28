@@ -9,7 +9,7 @@ import Layout from "@layouts/Layout.astro";
         >Bläsing</span
       ></span
     >
-    <div class="wave">👋</div>
+    <div id="waving">👋</div>
   </h1>
   <p>
     Hallo! Ich bin 17 Jahre alt, Schüler im Abiturjahrgang des
@@ -30,14 +30,14 @@ import Layout from "@layouts/Layout.astro";
     font-weight: 200;
     color: rgb(var(--color-text));
   }
-  .wave {
+  #waving {
     font-size: min(2em, calc(-1em + 40vw));
     position: absolute;
     right: 0px;
     bottom: max(-0.5em, calc(-16rem + 1em));
-    animation: 1s wave ease-in-out;
+    animation: 1s waving ease-in-out;
   }
-  @keyframes wave {
+  @keyframes waving {
     25% {
       transform: rotateZ(-10deg);
     }
@@ -51,3 +51,19 @@ import Layout from "@layouts/Layout.astro";
     }
   }
 </style>
+
+<script>
+  const waving = document.getElementById("waving") as HTMLDivElement;
+  let animating = true;
+  function animate() {
+    if (animating) return;
+    waving.style.animation = "none";
+    waving.offsetHeight;
+    waving.style.animation = null!;
+    animating = true;
+  }
+  waving.addEventListener("animationend", () => {
+    animating = false;
+  });
+  waving.addEventListener("mouseenter", animate);
+</script>
