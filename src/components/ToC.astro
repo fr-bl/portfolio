@@ -1,0 +1,75 @@
+---
+
+---
+
+<ol id="toc"></ol>
+
+<script>
+  import Reveal from "reveal.js";
+
+  const toc = document.querySelector("#toc") as HTMLOListElement;
+  const slide = getParentSlide(toc);
+
+  Reveal.on("ready", () => {
+    const slides = Reveal.getSlides();
+    const chapters = slides
+      .map(getChapter)
+      .filter((c) => c !== undefined) as Chapter[];
+
+    for (const { title, url } of chapters) {
+      const anchor = document.createElement("a");
+      anchor.innerText = title;
+      anchor.href = url;
+      const item = document.createElement("li");
+      item.append(anchor);
+      toc.append(item);
+    }
+  });
+
+  Reveal.addKeyBinding(
+    { key: "I", keyCode: 73, description: "Show the Table of Contents" },
+    () => {
+      const { h, v } = Reveal.getIndices(slide);
+      Reveal.slide(h, v);
+    },
+  );
+
+  function isIgnored(element: HTMLElement) {
+    while (element.parentElement) {
+      if (element.hasAttribute("data-toc-ignore")) return true;
+      element = element.parentElement;
+    }
+    return false;
+  }
+
+  function getParentSlide(element: HTMLElement) {
+    while (element.parentElement) {
+      if (element.tagName === "SECTION") return element;
+      element = element.parentElement;
+    }
+  }
+
+  function getChapter(slide: HTMLElement): Chapter | undefined {
+    const selection = slide.querySelectorAll<HTMLHeadingElement>("h1, h2");
+    const headers = [...selection].filter((h) => !isIgnored(h) && h.innerText);
+    const [header] = headers.sort((a, b) => a.tagName.localeCompare(b.tagName));
+    if (header === undefined) return undefined;
+
+    const indices = Reveal.getIndices(slide);
+    return {
+      indices,
+      url: `#/${indices.h}/${indices.v ?? ""}`,
+      title: header.innerText,
+    };
+  }
+
+  interface Chapter {
+    indices: {
+      h: number;
+      v: number;
+      f: number;
+    };
+    url: string;
+    title: string;
+  }
+</script>
