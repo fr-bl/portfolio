@@ -18,14 +18,12 @@ const { title } = Astro.props;
 <html lang="de" transition:animate="none">
   <Head {...Astro.props} />
   <body>
-    <slot name="content">
-      <Header />
-      <main transition:animate={slide({ duration: 150 })}>
-        <slot name="title"><h1>{title}</h1></slot>
-        <slot />
-      </main>
-      <Footer />
-    </slot>
+    <Header />
+    <main transition:animate={slide({ duration: 150 })}>
+      <slot name="title"><h1>{title}</h1></slot>
+      <slot />
+    </main>
+    <Footer />
     <CursorAura />
   </body>
 </html>

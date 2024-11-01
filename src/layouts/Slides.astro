@@ -1,19 +1,27 @@
 ---
-import Layout, { type Props as LayoutProps } from "@layouts/Layout.astro";
+import "@styles/global.css";
+import "@fontsource-variable/hanken-grotesk";
+import "@fontsource-variable/source-sans-3";
 import "highlight.js/styles/base16/one-light.css";
 import "reveal.js/dist/reveal.css";
 import "reveal.js/dist/theme/black.css";
 
-export type Props = LayoutProps;
+import Head, { type Props as HeadProps } from "@components/Head.astro";
+
+export type Props = HeadProps;
 ---
 
-<Layout {...Astro.props}>
-  <div class="reveal" slot="content">
-    <div class="slides">
-      <slot />
+<!doctype html>
+<html lang="de" transition:animate="none">
+  <Head {...Astro.props} />
+  <body>
+    <div class="reveal" slot="body">
+      <div class="slides">
+        <slot />
+      </div>
     </div>
-  </div>
-</Layout>
+  </body>
+</html>
 
 <script>
   import Reveal from "reveal.js";
