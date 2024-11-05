@@ -2,11 +2,16 @@
   --color-background: 27, 41, 134;
   --color-text: 255, 255, 255;
   --color-highlight: 100, 111, 203;
+  --color-mantle: 24, 34, 99;
   --size-content-width: 800px;
   --size-gap: 2em;
-  --size-padding: 2em;
-  --font-family-content: "Source Sans 3 Variable", sans-serif;
+  --size-padding-layout: 2em;
+  --size-padding-content: 0.3em;
+  --size-border-radius: 0.2em;
+  --size-border-width: 2px;
   --font-family-layout: "Hanken Grotesk Variable", sans-serif;
+  --font-family-content: "Source Sans 3 Variable", sans-serif;
+  --font-family-mono: "Ubuntu Mono", monospace;
   --duration-short: 0.15s;
 }
 
@@ -24,7 +29,7 @@ main {
   max-width: var(--size-content-width);
   margin: 0px auto;
   min-height: calc(100vh - 22rem);
-  padding: var(--size-padding);
+  padding: var(--size-padding-layout);
 }
 
 a {
@@ -73,4 +78,17 @@ h1 {
 
 h2 {
   font-size: 2em;
+}
+
+code,
+pre,
+kbd {
+  background: rgb(var(--color-mantle));
+  border-radius: var(--size-border-radius);
+  padding: 0 var(--size-padding-content);
+  font-family: var(--font-family-mono);
+}
+
+pre {
+  padding: var(--size-padding-content);
 }

@@ -27,6 +27,7 @@
   "dependencies": {
     "@fontsource-variable/hanken-grotesk": "^5.1.0",
     "@fontsource-variable/source-sans-3": "^5.1.0",
+    "@fontsource/ubuntu-mono": "^5.1.0",
     "@types/reveal.js": "^5.0.4",
     "highlight.js": "^11.10.0",
     "reveal.js": "^5.1.0"
