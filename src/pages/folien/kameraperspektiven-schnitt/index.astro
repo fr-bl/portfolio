@@ -1,0 +1,319 @@
+---
+import Slides from "@layouts/Slides.astro";
+import ToC from "@components/ToC.astro";
+import Source from "@components/Source.astro";
+import { Image } from "astro:assets";
+export function formatDate(date: Date) {
+  return date.toLocaleDateString("de-DE", { dateStyle: "long" });
+}
+
+const images = {
+  hungerGames:
+    "https://image.tmdb.org/t/p/original/1ewwtjqAcwZ5abr2X7coGN0UwaI.jpg",
+  harryPotter:
+    "https://image.tmdb.org/t/p/original/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg",
+  theMatrix:
+    "https://image.tmdb.org/t/p/original/5USOlsrdfQidTzAxn93bCHRo6bX.jpg",
+  theGoodTheBadAndTheUgly:
+    "https://image.tmdb.org/t/p/original/w0fVaa8kxkVlQNxH15A4JtlMvxR.jpg",
+  untersicht:
+    "https://s.studiobinder.com/wp-content/uploads/2018/07/Low-Angle-Shot-Low-Angle-Example-The-Matrix.jpg",
+  vogelperspektive:
+    "https://static1.srcdn.com/wordpress/wp-content/uploads/2018/09/The-Hunger-Games-Arena.jpg",
+  schraegsicht:
+    "https://s.studiobinder.com/wp-content/uploads/2019/01/Dutch-Angle-Shots-Example-Dutch-Angle-Camera-Harry-Potter.jpg",
+  nahaufnahme:
+    "https://joeswidereading.weebly.com/uploads/1/8/4/3/18432919/4356689_orig.png",
+  overTheShoulder:
+    "https://s3.amazonaws.com/pbblogassets/uploads/2017/05/27115950/Over-The-Shoulder-Harry-Potter.jpg",
+};
+---
+
+<Slides title="Kameraperspektiven & Schnitt">
+  <section>
+    <div class="carousel r-stretch">
+      <img
+        src={images.hungerGames}
+        alt="Hunger Games Filmposter"
+        width={560}
+        height={840}
+      />
+      <img
+        src={images.harryPotter}
+        alt="Harry Potter Filmmposter"
+        width={560}
+        height={840}
+      />
+      <img
+        src={images.theMatrix}
+        alt="The Matrix Filmposter"
+        width={560}
+        height={840}
+      />
+      <img
+        src={images.theGoodTheBadAndTheUgly}
+        alt="The Good The Bad And The Ugly Filmposter"
+        width={560}
+        height={840}
+      />
+    </div>
+  </section>
+  <section data-toc-ignore>
+    <p>Welche Darstellungsmittel nutzen Filme?</p>
+    <h1>Kameraperspektiven &amp; Schnitt</h1>
+    <author>Max &amp; Frederick</author>
+    •
+    <time>
+      {formatDate(new Date("13 Dec 2024"))}
+    </time>
+  </section>
+  <section data-toc-ignore>
+    <h2>Gliederung</h2>
+    <ToC />
+  </section>
+  <section>
+    <section>
+      <h2>Kameraperspektiven</h2>
+    </section>
+    <section>
+      <h3>Definition</h3>
+      <ul>
+        <li>Positionierung der Kamera zu einem Objekt</li>
+        <li>
+          verschiedene Parameter beeinflussen Wirkung
+          <ul>
+            <li>Winkel</li>
+            <li>Entfernung</li>
+            <li>Perspektiven</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3>Hohe und tiefe Winkel</h3>
+      <div class="columns">
+        <ul>
+          <li>
+            Untersicht (hinauf)
+            <ul><li>Überlegenheit, Bedrohung</li></ul>
+          </li>
+          <li>Aufsicht (herab)<ul><li>Unterlegenheit</li></ul></li>
+        </ul>
+        <figure>
+          <Image
+            width={450}
+            height={200}
+            src={images.untersicht}
+            alt="Untersicht"
+          />
+          <figcaption>Untersicht in The Matrix</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section>
+      <h3>Extrem hohe und tiefe Winkel</h3>
+      <div class="columns">
+        <ul>
+          <li>generell selten verwendet</li>
+          <li>Froschperspektive<ul><li>wie Untersicht</li></ul></li>
+          <li>
+            Vogelperspektive<ul>
+              <li>Geschehen darstellen, Kollektivität</li>
+            </ul>
+          </li>
+        </ul>
+        <figure>
+          <Image
+            width={450}
+            height={200}
+            src={images.vogelperspektive}
+            alt="Vogelperspektive"
+          />
+          <figcaption>Vogelperspektive in Hunger Games</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section>
+      <h3>Gekippte Winkel</h3>
+      <div class="columns">
+        <ul>
+          <li>
+            Schrägsicht
+            <ul>
+              <li>Dramaturgie, Kaotik</li>
+              <li>Surrealität</li>
+              <li>Unbehagen</li>
+            </ul>
+          </li>
+        </ul>
+        <figure>
+          <Image
+            width={350}
+            height={200}
+            src={images.schraegsicht}
+            alt="Schrägsicht"
+          />
+          <figcaption>Schrägsicht in Harry Potter</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section>
+      <h3>Entfernungen</h3>
+      <div class="columns">
+        <ul>
+          <li>
+            Close-up
+            <ul>
+              <li>Emotionen, Details</li>
+              <li>Isolierung von der Umgebung</li>
+            </ul>
+          </li>
+          <li>Long-Shot<ul><li>Darstellung der Umgebung</li></ul></li>
+        </ul>
+        <figure>
+          <Image
+            width={450}
+            height={200}
+            src={images.nahaufnahme}
+            alt="Nahaufnahme"
+          />
+          <figcaption>Nahaufnahme in Hunger Games</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section>
+      <h3>Perspektiven</h3>
+      <div class="columns">
+        <ul>
+          <li>
+            Over-The-Shoulder
+            <ul>
+              <li>Konversation</li>
+              <li>Identifikation</li>
+            </ul>
+          </li>
+          <li>First-Person<ul><li>Identifikation</li></ul></li>
+        </ul>
+        <figure>
+          <Image
+            width={350}
+            height={200}
+            src={images.overTheShoulder}
+            alt="Over-The-Shoulder"
+          />
+          <figcaption>Over-The-Shoulder-Aufnahme in Harry Potter</figcaption>
+        </figure>
+      </div>
+    </section>
+  </section>
+  <section>
+    <section>
+      <h2>Filmschnitt bzw. Montage</h2>
+    </section>
+    <section>
+      <h3>Definition</h3>
+      <ul>
+        <li>Strukturierung &amp; Bearbeitung des Filmmaterials</li>
+        <li>
+          verschiedene Methoden
+          <ul>
+            <li>schnelle Schnitte</li>
+            <li>Kontextsprünge</li>
+            <li>Zeitsprünge</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <h2>Zusammenfassung</h2>
+    <ul>
+      <li>viele verschiedene Darstellungsmethoden</li>
+      <li>in Kombination anwendbar</li>
+      <li>allerdings in geringen Maßen</li>
+    </ul>
+  </section>
+  <section data-toc-ignore>
+    <section>
+      <h2>Quellen</h2>
+      Stand
+      <time>
+        {formatDate(new Date("11 Dec 2024"))}
+      </time>
+    </section>
+    <section>
+      <h3>Textquellen</h3>
+      <ul style="list-style: none;">
+        <li>
+          <Source
+            url="https://factualamerica.com/filmmaking/8-powerful-techniques-for-evoking-emotion-through-cinematography"
+          />
+        </li>
+        <li><Source url="https://filmpuls.info/kameraperspektive" /></li>
+        <li>
+          <Source
+            url="https://studiobinder.com/blog/types-of-camera-shot-angles-in-film"
+          />
+        </li>
+        <li>
+          <Source url="https://de.wikipedia.org/wiki/Kameraperspektive" />
+        </li>
+        <li>
+          <Source url="https://filmpuls.info/filmschnitt-pacing-und-timing" />
+        </li>
+        <li>
+          <Source url="https://filmsupply.com/articles/film-editing-cuts" />
+        </li>
+        <li><Source url="https://de.wikipedia.org/wiki/Filmschnitt" /></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Bildquellen</h3>
+      <ul
+        style="list-style: none; overflow-y: auto; height: 400px; font-size: 0.8em"
+      >
+        {
+          Object.values(images).map((url) => (
+            <li>
+              <Source small url={url} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </section>
+</Slides>
+
+<script>
+  for (const carousel of document.getElementsByClassName("carousel")) {
+    carousel.append(...Array.from(carousel.children).map((n) => n.cloneNode()));
+    console.log(carousel.children);
+  }
+</script>
+
+<style>
+  .carousel {
+    animation: scroll 20s linear infinite;
+    display: flex;
+    gap: 0.25em;
+
+    img {
+      transform: skew(-5deg);
+    }
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(-200px);
+    }
+    100% {
+      transform: translateX(-2000px);
+    }
+  }
+  .columns {
+    display: flex;
+    gap: 0.25em;
+  }
+  figcaption {
+    font-size: small;
+  }
+</style>

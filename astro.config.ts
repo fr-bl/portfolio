@@ -5,4 +5,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://frederick.blaes.ing",
   integrations: [sitemap()],
+  experimental: {
+    responsiveImages: true,
+  },
 });

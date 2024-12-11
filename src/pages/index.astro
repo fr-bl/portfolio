@@ -4,11 +4,10 @@ import Layout from "@layouts/Layout.astro";
 
 <Layout title="Ich">
   <h1 slot="title" class="title">
-    <span class="name"
-      ><span class="first">Frederick</span><br /><span class="last"
-        >Bläsing</span
-      ></span
-    >
+    <span class="name">
+      <span class="first">Frederick</span>
+      <span class="last"> Bläsing </span>
+    </span>
     <div id="waving">👋</div>
   </h1>
   <p>
@@ -24,6 +23,10 @@ import Layout from "@layouts/Layout.astro";
 <style>
   .title {
     position: relative;
+  }
+  .name {
+    display: flex;
+    flex-direction: column;
   }
   .name > .first {
     font-size: 0.8em;
