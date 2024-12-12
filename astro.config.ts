@@ -8,4 +8,7 @@ export default defineConfig({
   experimental: {
     responsiveImages: true,
   },
+  image: {
+    remotePatterns: [{ protocol: "https" }],
+  },
 });
